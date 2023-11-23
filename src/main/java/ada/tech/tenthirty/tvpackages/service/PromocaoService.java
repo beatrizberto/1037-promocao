@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
+import java.util.List;
 
 @Service
 public class PromocaoService {
@@ -20,6 +21,17 @@ public class PromocaoService {
     public PromocaoResponse savePromocao(PromocaoRequest promocaoRequest) {
         Promocao promocaoEntity = repository.save(PromocaoConvert.toEntity(promocaoRequest));
         return PromocaoConvert.toResponse(promocaoEntity);
+    }
+
+    public List<PromocaoResponse> getPromocoes() {
+        List<Promocao> promocoes = repository.findAll();
+        return PromocaoConvert.toResponseList(promocoes);
+
+    }
+
+    public PromocaoResponse getPromocaoByPacoteId(Integer pacoteId){
+        return PromocaoConvert.toResponse(repository.findByPacoteId(pacoteId).get());
+
     }
 
 

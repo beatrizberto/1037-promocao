@@ -17,7 +17,9 @@ import java.math.BigDecimal;
 public class Promocao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer promocaoId;
+
+    private Integer pacoteId;
 
     private Integer desconto;
 
@@ -26,7 +28,8 @@ public class Promocao {
     private BigDecimal valorPromocional;
 
 
-    public Promocao(BigDecimal valorPacote, Integer desconto) {
+    public Promocao(Integer pacoteId, BigDecimal valorPacote, Integer desconto) {
+        this.pacoteId = pacoteId;
         this.valorPacote = valorPacote;
         this.desconto = desconto;
 

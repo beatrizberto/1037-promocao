@@ -7,10 +7,9 @@ import ada.tech.tenthirty.tvpackages.service.RabbitMQService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value="promocao")
@@ -27,4 +26,17 @@ public class PromocaoController {
        PromocaoResponse promocao = promocaoService.savePromocao(promocaoRequest);
        return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping
+    private List<PromocaoResponse> listarPromocoes(){
+        return promocaoService.getPromocoes();
+    }
+
+    @GetMapping("/{pacoteId}")
+    public ResponseEntity<PromocaoResponse> getPromocaoByPacoteId(@PathVariable Integer pacoteId){
+
+        return ResponseEntity.ok(promocaoService.getPromocaoByPacoteId(pacoteId));
+
+    }
+
 }
