@@ -67,3 +67,5 @@ Requisição de Promoção
 - Jessica Alves
 - Jessica Lima
 - Luciana Oliveira
+
+[Link para o repositório 1037-pagamento](https://github.com/fernanda-reis/1037-pagamento)
