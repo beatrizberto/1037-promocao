@@ -21,17 +21,28 @@ O projeto é baseado em uma arquitetura de microsserviços, integrando-se de man
 3. Configure o banco de dados conforme necessário.
 
 ## Funcionalidades
- 
-### 1. Consultar Promoção
-O microserviço oferece um endpoint REST para consultar informações de promoções associadas a um determinado pacote:
 
-. Endpoint: 'GET /promocao/{PacoteId}'
+### 1. Criar Promoção
+Método: POST
+Endpoint: /promocao
+Descrição: Cria uma nova promoção com base nos dados fornecidos.
+Request Body: PromocaoRequest
+Response: PromocaoResponse
 
-PacoteId: Identificador do pacote para o qual deseja-se obter informações de promoção.
+### 2. Listar Promoções
+Método: GET
+Endpoint: /promocao
+Descrição: Lista todas as promoções disponíveis.
+Response: Lista de PromocaoResponse
 
-Se houver promoções disponíveis para o pacote consultado, o serviço retorna a porcentagem referente a promoção, caso contrário retorna 0.
+### 3. Obter Promoção por Pacote ID
+Método: GET
+Endpoint: /promocao/{PacoteId}
+Descrição: Obtém informações de promoção para um pacote específico.
+Path Variable: PacoteId (Identificador do pacote)
+Response: Porcentagem de desconto (Integer) para o pacote especificado ou 0 se não tiver em promoção.
 
-### Contrato de Comunicação
+## Contrato de Comunicação
 
 Requisição de Promoção
 
