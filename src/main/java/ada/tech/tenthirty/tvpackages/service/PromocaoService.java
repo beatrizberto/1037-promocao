@@ -46,8 +46,8 @@ public class PromocaoService {
             Integer desconto = promocao.get().getDesconto();
             return ResponseEntity.ok(desconto);
         } else {
-            System.out.println("Não há promoções cadastradas para o pacote " + pacoteId);
-            return ResponseEntity.notFound().build();
+            System.out.println("Não há promoções cadastradas para o pacote id " + pacoteId);
+            return ResponseEntity.ok(0);
         }
 
     }
