@@ -11,21 +11,16 @@ public class PromocaoConvert {
 
     public static Promocao toEntity(PromocaoRequest promocaoRequest) {
         Promocao promocao = new Promocao();
-        promocao.setValorPacote(promocaoRequest.getValorPacote());
         promocao.setPacoteId(promocaoRequest.getPacoteId());
         promocao.setDesconto(promocaoRequest.getDesconto());
-        promocao.setValorPromocional(null);
         return promocao;
     }
-
 
     public static PromocaoResponse toResponse(Promocao promocao) {
         PromocaoResponse promocaoResponse = new PromocaoResponse();
         promocaoResponse.setPromocaoId(promocao.getPromocaoId());
         promocaoResponse.setPacoteId(promocao.getPacoteId());
-        promocaoResponse.setValorPacote(promocao.getValorPacote());
         promocaoResponse.setDesconto(promocao.getDesconto());
-        promocao.setValorPromocional(promocao.getValorPromocional());
         return promocaoResponse;
     }
 

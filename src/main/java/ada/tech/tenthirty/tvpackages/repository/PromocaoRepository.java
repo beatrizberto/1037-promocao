@@ -11,4 +11,6 @@ public interface PromocaoRepository extends JpaRepository <Promocao, Integer>{
 
 
     Optional<Promocao> findByPacoteId(Integer pacoteId);
+
+    boolean existsByPacoteId(Integer pacoteId);
 }

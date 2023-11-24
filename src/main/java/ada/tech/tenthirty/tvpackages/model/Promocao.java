@@ -15,25 +15,19 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Promocao {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer promocaoId;
 
     private Integer pacoteId;
-
     private Integer desconto;
 
-    private BigDecimal valorPacote;
-
-    private BigDecimal valorPromocional;
-
-
-    public Promocao(Integer pacoteId, BigDecimal valorPacote, Integer desconto) {
-        this.pacoteId = pacoteId;
-        this.valorPacote = valorPacote;
-        this.desconto = desconto;
-
-    }
+//    public Promocao(Integer pacoteId, Integer desconto) {
+//        this.pacoteId = pacoteId;
+//        this.desconto = desconto;
+//
+//    }
 
 
 }

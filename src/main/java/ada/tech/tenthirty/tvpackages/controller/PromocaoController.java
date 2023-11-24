@@ -16,9 +16,6 @@ import java.util.List;
 public class PromocaoController {
 
     @Autowired
-    private RabbitMQService rabbitMQService;
-
-    @Autowired
     PromocaoService promocaoService;
 
     @PostMapping
