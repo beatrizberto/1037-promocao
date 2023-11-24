@@ -1,15 +1,20 @@
 package ada.tech.tenthirty.tvpackages.payloads;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class PromocaoResponse {
-    public Integer Id;
+    public Integer promocaoId;
+    public String pacoteId;
     public Integer desconto;
-    public BigDecimal valorPacote;
-    public BigDecimal valorPromocional;
+
+
+    public PromocaoResponse(Integer desconto) {
+        this.desconto = desconto;
+    }
 }
