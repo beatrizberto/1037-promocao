@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PromocaoResponse {
     public Integer promocaoId;
-    public Integer pacoteId;
+    public String pacoteId;
     public Integer desconto;
 
 

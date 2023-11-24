@@ -39,11 +39,12 @@ public class PromocaoService {
         return PromocaoConvert.toResponseList(promocoes);
     }
 
-    public ResponseEntity<Integer> getPromocaoByPacoteId(Integer pacoteId) {
+    public ResponseEntity<Integer> getPromocaoByPacoteId(String pacoteId) {
         Optional<Promocao> promocao = repository.findByPacoteId(pacoteId);
 
         if (promocao.isPresent()) {
             Integer desconto = promocao.get().getDesconto();
+            System.out.println("Desconto de "+ desconto +"% aplicado ao pacote id " + pacoteId);
             return ResponseEntity.ok(desconto);
         } else {
             System.out.println("Não há promoções cadastradas para o pacote id " + pacoteId);

@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface PromocaoRepository extends JpaRepository <Promocao, Integer>{
 
 
-    Optional<Promocao> findByPacoteId(Integer pacoteId);
+    Optional<Promocao> findByPacoteId(String pacoteId);
 
-    boolean existsByPacoteId(Integer pacoteId);
+
 }

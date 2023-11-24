@@ -8,10 +8,10 @@ import java.io.Serializable;
 
 @Getter
 public class PromocaoRequest implements Serializable {
-    public Integer pacoteId;
+    public String pacoteId;
     public Integer desconto;
 
-    public PromocaoRequest(Integer pacoteId, Integer desconto) {
+    public PromocaoRequest(String pacoteId, Integer desconto) {
         this.pacoteId = pacoteId;
         this.desconto = desconto;
 

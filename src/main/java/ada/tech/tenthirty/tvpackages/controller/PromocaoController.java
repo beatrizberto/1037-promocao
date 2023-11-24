@@ -29,7 +29,7 @@ public class PromocaoController {
     }
 
     @GetMapping("/{pacoteId}")
-    public ResponseEntity<Integer> getPromocaoByPacoteId(@PathVariable Integer pacoteId){
+    public ResponseEntity<Integer> getPromocaoByPacoteId(@PathVariable String pacoteId){
 
         return promocaoService.getPromocaoByPacoteId(pacoteId);
 
