@@ -3,7 +3,6 @@ package ada.tech.tenthirty.tvpackages.controller;
 import ada.tech.tenthirty.tvpackages.payloads.PromocaoRequest;
 import ada.tech.tenthirty.tvpackages.payloads.PromocaoResponse;
 import ada.tech.tenthirty.tvpackages.service.PromocaoService;
-import ada.tech.tenthirty.tvpackages.service.RabbitMQService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,9 +29,9 @@ public class PromocaoController {
     }
 
     @GetMapping("/{pacoteId}")
-    public ResponseEntity<PromocaoResponse> getPromocaoByPacoteId(@PathVariable Integer pacoteId){
+    public ResponseEntity<Integer> getPromocaoByPacoteId(@PathVariable Integer pacoteId){
 
-        return ResponseEntity.ok(promocaoService.getPromocaoByPacoteId(pacoteId));
+        return promocaoService.getPromocaoByPacoteId(pacoteId);
 
     }
 

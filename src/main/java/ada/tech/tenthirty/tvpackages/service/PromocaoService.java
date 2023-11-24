@@ -7,9 +7,11 @@ import ada.tech.tenthirty.tvpackages.payloads.PromocaoResponse;
 import ada.tech.tenthirty.tvpackages.repository.PromocaoRepository;
 import ada.tech.tenthirty.tvpackages.utils.PromocaoConvert;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PromocaoService {
@@ -37,9 +39,16 @@ public class PromocaoService {
         return PromocaoConvert.toResponseList(promocoes);
     }
 
-    public PromocaoResponse getPromocaoByPacoteId(Integer pacoteId){
-        return PromocaoConvert.toResponse(repository.findByPacoteId(pacoteId).get());
+    public ResponseEntity<Integer> getPromocaoByPacoteId(Integer pacoteId) {
+        Optional<Promocao> promocao = repository.findByPacoteId(pacoteId);
 
+        if (promocao.isPresent()) {
+            Integer desconto = promocao.get().getDesconto();
+            return ResponseEntity.ok(desconto);
+        } else {
+            System.out.println("Não há promoções cadastradas para o pacote " + pacoteId);
+            return ResponseEntity.notFound().build();
+        }
 
     }
 
