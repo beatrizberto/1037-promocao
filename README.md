@@ -57,7 +57,7 @@ Response: Porcentagem de desconto (Integer) para o pacote especificado ou 0 se n
 
 Requisição de Promoção
 
-![1f5c28c6-d43e-4c3b-b546-a5362891fa6b](https://github.com/lucianasfoliveira/teste/assets/116811743/912a28d8-6db0-47fa-9aa6-0d6ec1db10a3)
+[Link para ContratoPromocao](https://github.com/seu-usuario/1037-promocao/blob/main/public/ContratoPromocao)
 
 ## Contribuição
 
